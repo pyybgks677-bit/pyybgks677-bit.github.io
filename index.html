@@ -5,9 +5,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wolverhampton PHV Knowledge Mock Test</title>
-  <link rel="stylesheet" href="styles.css" />
 
-  <!-- AdSense (ONLY on content pages) -->
+  <link rel="stylesheet" href="styles.css?v=10" />
+
+  <!-- AdSense: content pages only -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5034027823424390"
     crossorigin="anonymous"></script>
@@ -18,8 +19,8 @@
     <h1>Wolverhampton PHV Knowledge Mock Test</h1>
 
     <p class="muted" style="max-width: 820px;">
-      This mock test is designed to help prepare for the Wolverhampton PHV Knowledge Test.
-      It is not affiliated with Wolverhampton City Council and should be used for practice purposes only.
+      This website provides an independent practice mock test for drivers preparing for the Wolverhampton PHV Knowledge Test.
+      It is not affiliated with or endorsed by Wolverhampton City Council and should be used for practice purposes only.
     </p>
 
     <p class="sub">
@@ -29,37 +30,71 @@
   </header>
 
   <main class="container card">
-    <h2>About this mock test</h2>
+    <section>
+      <h2 style="margin-top: 0;">About this mock test</h2>
 
-    <p>
-      This website provides an independent practice mock test for drivers preparing for the
-      Wolverhampton PHV Knowledge Test. The questions are presented in a multiple-choice format so you can
-      practise selecting answers and reviewing your performance.
-    </p>
+      <p>
+        This mock test is designed to help you practise multiple-choice questions and to get used to the pace of a timed test.
+        It includes two modes:
+      </p>
 
-    <p>
-      You can use the mock test in two modes: a practice mode that allows review of incorrect questions,
-      and an exam-style mode where results are shown at the end. The time limit shown is provided for practice.
-    </p>
+      <ul>
+        <li><strong>Practice mode</strong> – review results and retry incorrect questions.</li>
+        <li><strong>Exam mode</strong> – results at the end, to simulate an exam-style attempt.</li>
+      </ul>
 
-    <p>
-      This website is a practice tool only. It is not an official exam and passing this mock test does not
-      guarantee success in any official knowledge test. This website is not affiliated with or endorsed by
-      Wolverhampton City Council or any licensing authority.
-    </p>
+      <p>
+        This is a practice tool only. It is not an official exam and passing this mock test does not guarantee success in any official test.
+      </p>
+    </section>
 
-    <div class="actions">
-      <a class="btn primary" href="quiz.html">Start the mock test</a>
-    </div>
+    <section style="margin-top: 18px;">
+      <h2>How to use</h2>
 
-    <p class="hint muted" style="margin-top: 10px;">
-      By using this website you agree to the <a href="terms.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a>.
-      Please read the <a href="disclaimer.html">Disclaimer</a>.
-    </p>
+      <ul>
+        <li>Choose your mode on the quiz page (Practice or Exam).</li>
+        <li>Optionally shuffle the question order.</li>
+        <li>Answer every question before submitting (submit is disabled until all questions are answered).</li>
+        <li>You can move freely and change answers before submitting.</li>
+      </ul>
 
-    <p class="hint muted" style="margin-top: 14px;">
-      Tip: On the quiz page you can use A/B/C/D keys to select. Arrow keys to move. Press F to flag.
-    </p>
+      <p class="hint">
+        Keyboard shortcuts on the quiz page: A/B/C/D to answer, Left/Right arrows to move, F to flag, S to skip.
+      </p>
+    </section>
+
+    <section style="margin-top: 18px;">
+      <h2>Start</h2>
+
+      <div class="actions startActions">
+        <a class="btn primary" href="quiz.html">Start the mock test</a>
+        <a class="btn" href="guide.html">Read the guide</a>
+      </div>
+
+      <p class="muted" style="margin-top: 10px;">
+        Tip: Start with Practice mode, review incorrect answers, then repeat in Exam mode once you are consistent.
+      </p>
+    </section>
+
+    <section style="margin-top: 18px;">
+      <h2>Frequently asked questions</h2>
+
+      <p><strong>Is this an official Wolverhampton City Council test?</strong><br>
+        No. This is an independent practice tool and is not affiliated with or endorsed by Wolverhampton City Council.
+      </p>
+
+      <p><strong>What is the pass mark?</strong><br>
+        The pass mark used by this mock test is <strong>80%</strong>.
+      </p>
+
+      <p><strong>Is there a time limit?</strong><br>
+        Yes. The mock test uses a <strong>45 minute</strong> time limit in timed mode.
+      </p>
+
+      <p><strong>Do I need an account?</strong><br>
+        No. This site does not require account registration.
+      </p>
+    </section>
   </main>
 
   <footer class="container footer">
@@ -74,13 +109,13 @@
   </footer>
 
   <script>
-    // Best score display on homepage only (no quiz logic here)
     (function () {
       const LS_BEST = "wolv_phv_mock_best_score";
+      const bestEl = document.getElementById("bestScore");
       const v = localStorage.getItem(LS_BEST);
       const n = v ? Number(v) : 0;
       const best = Number.isFinite(n) ? n : 0;
-      document.getElementById("bestScore").textContent = best.toFixed(1) + "%";
+      bestEl.textContent = best.toFixed(1) + "%";
     })();
   </script>
 </body>
